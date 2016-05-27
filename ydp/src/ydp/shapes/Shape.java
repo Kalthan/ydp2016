@@ -19,7 +19,7 @@ public abstract class Shape {
 //        tworzy  datę i id. Dostep do id oraz daty tylko przez konstruktor
 //        ( nie chcemy by ktos mieszal w danych statystycznych)
         Date currentTime = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy  HH:mm");
         creationTime = dateFormat.format(currentTime);
 
         this.id = id;
