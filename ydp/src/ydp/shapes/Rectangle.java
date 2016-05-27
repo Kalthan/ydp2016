@@ -1,7 +1,7 @@
 package ydp.shapes;
 
 /**
- * @author Michal
+ * @author Michal Radkiewicz
  */
 public class Rectangle extends Shape {
     //boki prostokata
@@ -20,7 +20,7 @@ public class Rectangle extends Shape {
 
     public void setSide1(float side1) {
         this.side1 = side1;
-        this.area = this.side1*this.side2;// nadpisuje pole przy zmianie boku
+        this.area = this.side1*this.side2;// wylicza pole przy zmianie boku
     }
 
     public float getSide2() {
@@ -29,7 +29,7 @@ public class Rectangle extends Shape {
 
     public void setSide2(float side2) {
         this.side2 = side2;
-        this.area = this.side1*this.side2;// nadpisuje pole przy zmianie boku
+        this.area = this.side1*this.side2;// wylicza pole przy zmianie boku
     }
     
 

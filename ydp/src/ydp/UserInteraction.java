@@ -10,7 +10,7 @@ import ydp.shapes.Shape;
  * @author Michal Radkiewicz
  */
 public class UserInteraction {  // klasa sluzy do komunikacji czlowiek-komputer,
-                                // pobiera dane od uzytkownika oraz moze wyswietlac raporty
+    // pobiera dane od uzytkownika oraz moze wyswietlac raporty
 
     private Scanner sc;
 
@@ -32,11 +32,11 @@ public class UserInteraction {  // klasa sluzy do komunikacji czlowiek-komputer,
 
     }
 
-    public float getFloatData() {// mozna wybrac ktora metoda moga byc pobierane dane(konsola, formularz etc.) 
+    public float getFloatData() {// mozna zmienic ktora metoda pobiera dane(konsola, formularz etc.) 
         return getFloatDataFromConsole();
     }
 
-    public String getStringData() {// mozna wybrac ktora metoda moga byc pobierane dane(konsola, formularz etc.)
+    public String getStringData() {// mozna zmienic ktora metoda pobiera dane(konsola, formularz etc.)
         return getStringDataFromConsole();
     }
 
@@ -56,23 +56,14 @@ public class UserInteraction {  // klasa sluzy do komunikacji czlowiek-komputer,
     }
 
     public String getStringDataFromConsole() {// pobiera dane String z konsoli
-        String temp;
-        while (true) {// trwa tak dlugo, dopoki nie pobierze poprawnej wartosci
-            try {
-                temp = sc.next();
-                break;
-            } catch (NullPointerException e) {
-                System.out.println("Please enter some value");
-            }
-        }
-        return temp.toUpperCase();// ujednolica wprowadzone dane(Rectangle, rectangle, RECTANGLE etc.)
+        return sc.next().toUpperCase();// ujednolica wprowadzone dane(Rectangle, rectangle, RECTANGLE etc.)
     }
 
-    public String getStringDataFromForm() {//todo
-        return null;
-    }
-
-    public Float getFloatDataFromForm() {//todo
-        return null;
-    }
+//    public String getStringDataFromForm() {//todo
+//        return null;
+//    }
+//
+//    public Float getFloatDataFromForm() {//todo
+//        return null;
+//    }
 }

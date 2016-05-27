@@ -9,15 +9,13 @@ import java.util.Date;
 public abstract class Shape {
 
     // wspolny zbior id dla wszystkich ksztaltow
-    protected int id;
+    protected final int id;
     // data jest we wszystkich ksztaltach, tworzona automatycznie w konstruktorze 
-    protected String creationTime;
-    // pole powierzchni figury, brak settera( zmiana pola nastepuje automatycznie przy zmianie bokow lub w konstruktorze)
+    protected final String creationTime;
+    // pole powierzchni figury . brak setter-> ( zmiana pola nastepuje automatycznie przy zmianie bokow lub w konstruktorze)
     protected float area;
 
     public Shape(int id) {
-//        tworzy  datę i id. Dostep do id oraz daty tylko przez konstruktor
-//        ( nie chcemy by ktos mieszal w danych statystycznych)
         Date currentTime = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy  HH:mm");
         creationTime = dateFormat.format(currentTime);

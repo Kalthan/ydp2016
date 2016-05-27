@@ -1,7 +1,7 @@
 package ydp.shapes;
 
 /**
- * @author Michal
+ * @author Michal Radkiewicz
  */
 public class Circle extends Shape {
     private float radius;
@@ -16,7 +16,7 @@ public class Circle extends Shape {
         return radius;
     }
 
-    public void setRadius(float radius) {
+    public void setRadius(float radius) {// zmiana promienia - zmienia sie automatycznie pole
         this.radius = radius;
         this.area = (float) Math.PI * radius*radius;
     }

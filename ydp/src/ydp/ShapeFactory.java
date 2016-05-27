@@ -5,7 +5,7 @@ import ydp.shapes.*;
 /**
  * @author Michal Radkiewicz
  */
-public class ShapeFactory {
+public class ShapeFactory {// klasa tworzaca i zwracajaca ksztalty
 
     UserInteraction ui;
 
@@ -13,7 +13,7 @@ public class ShapeFactory {
         this.ui = ui;
     }
 
-    public Shape createShape() {
+    public Shape createShape(int id) { // metoda tworzaca ksztalty
         while (true) {
             System.out.println("Please enter shape name");
 
@@ -24,21 +24,21 @@ public class ShapeFactory {
                     System.out.println("Please enter second side value");
                     float side2 = ui.getFloatData();
 
-                    Rectangle rectangle = new Rectangle(1, side1, side2);
+                    Rectangle rectangle = new Rectangle(id, side1, side2);
                     return rectangle;
 
                 case "CIRCLE":
                     System.out.println("Please enter radius value");
                     float radius = ui.getFloatData();
 
-                    Circle circle = new Circle(1, radius);
+                    Circle circle = new Circle(id, radius);
                     return circle;
 
                 case "SQUARE":
                     System.out.println("Please enter side value");
                     float side = ui.getFloatData();
 
-                    Square square = new Square(1, side);
+                    Square square = new Square(id, side);
                     return square;
 
                 default:
@@ -46,12 +46,12 @@ public class ShapeFactory {
                     
                     while (true) {
                         String choice = ui.getStringData();
-                        if (choice.equals("NO") || choice.equals("N")) {
+                        if (choice.equals("NO") || choice.equals("N")) {  // wraca do menu
                             return null;
-                        } else if (choice.equals("YES") || choice.equals("Y")) {
+                        } else if (choice.equals("YES") || choice.equals("Y")) {// powtarza wybor kszaltu
                             break;
                         } else {
-                            System.out.println("Type YES or NO");
+                            System.out.println("Type YES or NO"); // powtarza zapytanie YES or NO
                         }
                     }
             }
