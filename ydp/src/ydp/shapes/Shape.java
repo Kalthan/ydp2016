@@ -11,16 +11,16 @@ public abstract class Shape {
     // wspolny zbior id dla wszystkich ksztaltow
     protected int id;
     // data jest we wszystkich ksztaltach, tworzona automatycznie w konstruktorze 
-    protected Date created;
+    protected String creationTime;
     // pole powierzchni figury, brak settera( zmiana pola nastepuje automatycznie przy zmianie bokow lub w konstruktorze)
     protected float area;
 
     public Shape(int id) {
 //        tworzy  datę i id. Dostep do id oraz daty tylko przez konstruktor
 //        ( nie chcemy by ktos mieszal w danych statystycznych)
-        created = new Date();
+        Date currentTime = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        String dateString = dateFormat.format(created);
+        creationTime = dateFormat.format(currentTime);
 
         this.id = id;
     }
@@ -29,8 +29,8 @@ public abstract class Shape {
         return id;
     }
 
-    public Date getCreated() {
-        return created;
+    public String getCreationTime() {
+        return creationTime;
     }
 
     public float getArea() {
